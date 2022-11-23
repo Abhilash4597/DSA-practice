@@ -1,19 +1,16 @@
-//  =====================================================question-58 ===========================================================
+// ============================================================question-1 ==============================================================================================
 
-var lengthOfLastWord = function(s) {
-    let str=s.trim();
-    let count=0;
-    for(let i=str.length-1;i>=0;i--){
-        if(str[i]!==" "){
-            count++;
-        }else{
-            return count;
+var twoSum = function(nums, target) {
+    for(let i=0;i<nums.length-1;i++){
+        for(let j=i+1;j<nums.length;j++){
+            if(nums[i]+nums[j]==target){
+                return [i,j]
+            }
         }
     }
-    return count;
-    // check the test case for non alphabet and numbers also
+    return -1
 };
-console.log(lengthOfLastWord("hello world"));
+console.log(twoSum([2,7,11,15],9));
 
 // ============================================================question-34 ==============================================================================================
 
@@ -53,3 +50,21 @@ var searchRange = function(nums, target) {
     ansArr.push(firstIndex,lastIndex)
     return ansArr;
 };
+console.log(searchRange([5,7,7,8,8,10],8));
+
+//  =====================================================question-58 ===========================================================
+
+var lengthOfLastWord = function(s) {
+    let str=s.trim();
+    let count=0;
+    for(let i=str.length-1;i>=0;i--){
+        if(str[i]!==" "){
+            count++;
+        }else{
+            return count;
+        }
+    }
+    return count;
+    // check the test case for non alphabet and numbers also
+};
+console.log(lengthOfLastWord("hello world"));
