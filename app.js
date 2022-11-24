@@ -12,6 +12,26 @@ var twoSum = function(nums, target) {
 };
 console.log(twoSum([2,7,11,15],9));
 
+// ============================================================question-7 ==============================================================================================
+
+var reverse = function(x) {
+    let reverse=0;
+    let positiveNum = Math.abs(x);
+    while(positiveNum>0){
+        let rem = positiveNum % 10;
+        reverse = (reverse * 10) + rem;
+        positiveNum = Math.floor(positiveNum/10);
+    } 
+    if(reverse >= 2**31-1||reverse <= -(2**31)){
+        return 0;
+    }else if(x < 0){
+        return -reverse;
+    }else{
+        return reverse;
+    }
+};
+console.log(123);
+
 // ============================================================question-34 ==============================================================================================
 
 var searchRange = function(nums, target) {
