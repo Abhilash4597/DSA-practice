@@ -32,6 +32,24 @@ var reverse = function(x) {
 };
 console.log(123);
 
+// ============================================================question-9 ==============================================================================================
+
+var isPalindrome = function(x) {
+    let num="";
+    let digit = x;
+    while(digit>0){
+        let rem = digit%10;
+        num += rem;
+        digit = Math.floor(digit/10);
+    }
+    if(num==x){
+        return true;
+    }else{
+        return false;
+    }
+};
+console.log(isPalindrome(234));
+
 // ============================================================question-34 ==============================================================================================
 
 var searchRange = function(nums, target) {
