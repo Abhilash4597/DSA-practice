@@ -70,6 +70,20 @@ var isValid = function(str) {
 };
 console.log(isValid("()[]{}"));
 
+// ============================================================question-26 =================================================================================
+
+var removeDuplicates = function(nums) {
+    let j=0;
+        for(let i=0;i<nums.length;i++){
+            if(nums[i]!==nums[i+1]){
+                nums[j]=nums[i];
+                j++
+            }
+        }
+        return j;
+};
+console.log(removeDuplicates([1,1,2]));
+
 // ============================================================question-34 =================================================================================
 
 var searchRange = function(nums, target) {
