@@ -84,6 +84,20 @@ var removeDuplicates = function(nums) {
 };
 console.log(removeDuplicates([1,1,2]));
 
+// ============================================================question-27 =================================================================================
+
+var removeElement = function(nums, val) {
+    let j=0;
+    for(let i=0;i<nums.length;i++){
+        if(nums[i]!=val){
+            nums[j]=nums[i];
+            j++;
+        }
+    }
+    return j
+};
+console.log(removeElement([3,2,2,3],3));
+
 // ============================================================question-34 =================================================================================
 
 var searchRange = function(nums, target) {
@@ -140,3 +154,5 @@ var lengthOfLastWord = function(s) {
     // check the test case for non alphabet and numbers also
 };
 console.log(lengthOfLastWord("hello world"));
+
+
