@@ -4,11 +4,11 @@ var twoSum = function(nums, target) {
     for(let i=0;i<nums.length-1;i++){
         for(let j=i+1;j<nums.length;j++){
             if(nums[i]+nums[j]==target){
-                return [i,j]
+                return [i,j];
             }
         }
     }
-    return -1
+    return -1;
 };
 console.log(twoSum([2,7,11,15],9));
 
@@ -55,7 +55,7 @@ var isValid = function(str) {
     let arr=[];
     for(let i=0;i<str.length;i++){
         if(str[i]=="(" || str[i]=="{" || str[i]=="[" ){
-            arr.push(str[i])
+            arr.push(str[i]);
         }else if(str[i]==")" && arr[arr.length-1]=="(" || str[i]=="}" && arr[arr.length-1]=="{" || str[i]=="]" && arr[arr.length-1]=="["){
             arr.pop();
         }else{
@@ -77,7 +77,7 @@ var removeDuplicates = function(nums) {
         for(let i=0;i<nums.length;i++){
             if(nums[i]!==nums[i+1]){
                 nums[j]=nums[i];
-                j++
+                j++;
             }
         }
         return j;
@@ -94,9 +94,40 @@ var removeElement = function(nums, val) {
             j++;
         }
     }
-    return j
+    return j;
 };
 console.log(removeElement([3,2,2,3],3));
+
+// ============================================================question-33 =================================================================================
+
+var search = function(nums, target) {
+    let left = 0;
+    let right = nums.length-1;
+     
+    while(left <= right) {
+        let mid = left + Math.floor((right - left)/2);
+        
+        if(nums[mid] == target) {
+            return mid;
+        }
+        
+        if(nums[left] <= nums[mid]) {
+            if(nums[left] <= target && target < nums[mid]) {
+                right = mid - 1;
+            }else{
+                left = mid + 1;
+            }
+        } else {
+            if( nums[right] >= target && target > nums[mid]) {
+                left = mid + 1;
+            }else{
+                right = mid - 1;
+            }
+        }
+    }
+    return -1;
+ };
+ console.log(search([4,5,6,7,0,1,2],3));
 
 // ============================================================question-34 =================================================================================
 
@@ -138,7 +169,7 @@ var searchRange = function(nums, target) {
 };
 console.log(searchRange([5,7,7,8,8,10],8));
 
-//  =====================================================question-58 ===========================================================
+//  =====================================================question-58 =======================================================================================
 
 var lengthOfLastWord = function(s) {
     let str=s.trim();
@@ -156,3 +187,19 @@ var lengthOfLastWord = function(s) {
 console.log(lengthOfLastWord("hello world"));
 
 
+// ============================================================question-66 =================================================================================
+
+let plusOne = function(digits) {
+    for(let i=digits.length-1;i>=0;i--){
+        digits[i]++;
+        if(digits[i]>9){
+            digits[i]=0;
+        }
+        else{
+            return digits;
+        }
+    }
+    digits.unshift(1);
+    return digits;
+};
+console.log(plusOne([1,2,3]));
