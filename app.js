@@ -203,3 +203,19 @@ let plusOne = function(digits) {
     return digits;
 };
 console.log(plusOne([1,2,3]));
+
+// ============================================================question-75 =================================================================================
+
+var sortColors = function(nums) {
+    for(let i=0;i<nums.length;i++){
+        let min = i;
+        for(let j=i;j<nums.length;j++){
+            if(nums[j]<nums[min]){
+                min=j;
+            }
+        }
+        [nums[i],nums[min]]=[nums[min],nums[i]];
+    }
+    return nums;
+};
+console.log(sortColors([2,0,2,1,1,0]));
