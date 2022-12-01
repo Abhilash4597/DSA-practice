@@ -219,3 +219,25 @@ var sortColors = function(nums) {
     return nums;
 };
 console.log(sortColors([2,0,2,1,1,0]));
+
+// ============================================================question-125 =================================================================================
+
+var isPalindrome = function(s) {
+    let str=s.toLowerCase();
+    let alpha="abcdefghijklmnopqrstuvwxyz0123456789"
+    let ansStr="";
+    for(let i=str.length-1;i>=0;i--){
+        for(let j=0;j<alpha.length;j++){
+            if(str[i]==alpha[j]){
+                ansStr += str[i];
+            }
+        }
+    }
+    let ans = ansStr.split("").reverse().join("");
+    if(ans==ansStr){
+        return true;
+    }else{
+        return false;
+    }
+};
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
