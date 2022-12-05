@@ -259,21 +259,22 @@
 // };
 // console.log(moveZeroes([0,1,0,3,12]));
 
-// // ============================================================question-2091 ==============================================================================
+// ============================================================question-412 ==============================================================================
 
-var minimumDeletions = function(nums) {
-    for(let i=0;i<nums.length;i++){
-        let maxIndex=0;
-        let minIndex=0;
-        for(let j=1;j<nums.length;j++){
-            if(nums[i]>nums[j]){
-                maxIndex = i;
-            }else if(nums[i]<nums[j]){
-                minIndex = i;
-            }
-        }
-        console.log(minIndex);
-        console.log(maxIndex);
+
+var fizzBuzz = function(n) {
+    let arr=[];
+    for(let i=1;i<=n;i++){
+      if(i%15==0){
+        arr.push("FizzBuzz");
+      }else if(i%5==0){
+        arr.push("Buzz");
+      }else if(i%3==0){
+        arr.push("Fizz");
+      }else{
+        arr.push(i+"");
+      }
     }
+        return arr;
 };
-console.log(minimumDeletions([2,10,7,5,4,1,8,6]));
+console.log(fizzBuzz(30));
