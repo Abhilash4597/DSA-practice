@@ -278,3 +278,26 @@ var fizzBuzz = function(n) {
         return arr;
 };
 console.log(fizzBuzz(30));
+
+// ============================================================question-414 ==============================================================================
+
+var thirdMax = function(nums) {
+  let ans=undefined;
+  let num=nums.sort((a,b)=>a-b);
+  let arr=[];
+  let j=0;
+  for(let i=0;i<num.length;i++){
+    if(num[i]!=num[i+1]){
+      arr[j]=num[i];
+        j++
+    }
+  }
+  // console.log(arr)
+  if(arr.length<3){
+    return arr[arr.length-1];
+  }else if(nums.length>=3){
+    ans = arr[arr.length-3];
+    return ans;
+  }
+};
+console.log(thirdMax([3,2,1]));
