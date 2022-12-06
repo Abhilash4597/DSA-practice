@@ -301,3 +301,13 @@ var thirdMax = function(nums) {
   }
 };
 console.log(thirdMax([3,2,1]));
+
+// ============================================================question-977 ==============================================================================
+
+var sortedSquares = function(nums) {
+  for(let i=0;i<nums.length;i++){
+      nums[i]=nums[i]*nums[i];
+  }
+  return nums.sort((a,b)=>a-b);
+};
+console.log(sortedSquares([-4,-1,0,3,10]));
