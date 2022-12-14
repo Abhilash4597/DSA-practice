@@ -311,3 +311,20 @@ var sortedSquares = function(nums) {
   return nums.sort((a,b)=>a-b);
 };
 console.log(sortedSquares([-4,-1,0,3,10]));
+
+// ============================================================question-977 ==============================================================================
+
+var numberOfSteps = function(num) {
+  let count = 0;
+  while(num>0){
+      if(num%2==0){
+          num = num/2;
+          count++;
+      }else {
+          num = num -1;
+          count++;
+      }
+  }
+  return count;
+};
+console.log(numberOfSteps(14));
