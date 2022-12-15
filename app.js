@@ -312,7 +312,22 @@ var sortedSquares = function(nums) {
 };
 console.log(sortedSquares([-4,-1,0,3,10]));
 
-// ============================================================question-977 ==============================================================================
+// ============================================================question-1281 ==============================================================================
+
+var subtractProductAndSum = function(n) {
+  let product = 1;
+  let sum = 0;
+  while(n>0){
+      let digit = n % 10;
+      product *= digit;
+      sum += digit;
+      n = Math.floor(n/10);
+  }
+  return (product-sum);
+};
+console.log(subtractProductAndSum(234));
+
+// ============================================================question-1342 ==============================================================================
 
 var numberOfSteps = function(num) {
   let count = 0;
